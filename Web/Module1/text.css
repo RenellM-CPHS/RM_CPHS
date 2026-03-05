@@ -1,0 +1,12 @@
+#paragraph1 {
+    background-color: #e0f7fa;
+}
+
+#paragraph2 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#paragraph3 {
+    display: none;
+}
