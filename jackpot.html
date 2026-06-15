@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Fortune Slot Machine</title>
+    <link rel="stylesheet" href="jackpot.css">
+</head>
+<body>
+    <div class="container">
+        <div class="machine-header">
+            <h1>GOLDEN FORTUNE</h1>
+            <p class="subtitle">5 Reel Slot Machine</p>
+        </div>
+
+        <div class="display-panel">
+            <div class="display-box">
+                <span class="label">CREDITS</span>
+                <span class="value" id="balance">$1000.00</span>
+            </div>
+            <div class="display-box">
+                <span class="label">BET PER SPIN</span>
+                <span class="value" id="bet-display">$1.00</span>
+            </div>
+            <div class="display-box">
+                <span class="label">TOTAL WIN</span>
+                <span class="value" id="win-display">$0.00</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="machine-top"></div>
+            
+            <div class="reels-wrapper">
+                <div class="reel-slot" id="reel-1">
+                    <div class="reel">
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                        <div class="reel-item">PLUM</div>
+                        <div class="reel-item">GOLD</div>
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                    </div>
+                </div>
+                <div class="reel-slot" id="reel-2">
+                    <div class="reel">
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                        <div class="reel-item">PLUM</div>
+                        <div class="reel-item">GOLD</div>
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                    </div>
+                </div>
+                <div class="reel-slot" id="reel-3">
+                    <div class="reel">
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                        <div class="reel-item">PLUM</div>
+                        <div class="reel-item">GOLD</div>
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                    </div>
+                </div>
+                <div class="reel-slot" id="reel-4">
+                    <div class="reel">
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                        <div class="reel-item">PLUM</div>
+                        <div class="reel-item">GOLD</div>
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                    </div>
+                </div>
+                <div class="reel-slot" id="reel-5">
+                    <div class="reel">
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                        <div class="reel-item">PLUM</div>
+                        <div class="reel-item">GOLD</div>
+                        <div class="reel-item">BAR</div>
+                        <div class="reel-item">7</div>
+                        <div class="reel-item">CHERRY</div>
+                        <div class="reel-item">LEMON</div>
+                        <div class="reel-item">ORANGE</div>
+                        <div class="reel-item">BELL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payline"></div>
+            <div class="machine-bottom"></div>
+        </div>
+
+        <div class="message-area">
+            <div id="result-message"></div>
+            <div id="combo-display"></div>
+        </div>
+
+        <div class="control-panel">
+            <div class="bet-control">
+                <button class="btn-control" id="minus-btn">-</button>
+                <div class="bet-input-wrapper">
+                    <input type="text" id="bet-input" readonly>
+                    <span class="currency">$</span>
+                </div>
+                <button class="btn-control" id="plus-btn">+</button>
+            </div>
+
+            <button id="spin-btn" class="btn-spin">SPIN</button>
+
+            <div class="info-section">
+                <button id="reset-btn" class="btn-info">RESET</button>
+                <button id="paytable-btn" class="btn-info">PAYTABLE</button>
+            </div>
+        </div>
+
+        <!-- Pay Table Modal -->
+        <div id="paytable-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>PAY TABLE</h2>
+                <table class="paytable">
+                    <tr>
+                        <th>Combination</th>
+                        <th>Multiplier</th>
+                        <th>Odds</th>
+                    </tr>
+                    <tr class="jackpot-row">
+                        <td>5 GOLD (Jackpot)</td>
+                        <td>10,000x</td>
+                        <td>1 in 8,389,262</td>
+                    </tr>
+                    <tr>
+                        <td>5 of a Kind</td>
+                        <td>500x</td>
+                        <td>1 in 3,200</td>
+                    </tr>
+                    <tr>
+                        <td>4 of a Kind</td>
+                        <td>100x</td>
+                        <td>1 in 400</td>
+                    </tr>
+                    <tr>
+                        <td>3 of a Kind</td>
+                        <td>10x</td>
+                        <td>1 in 50</td>
+                    </tr>
+                    <tr class="bonus-row">
+                        <td>3 GOLD (anywhere)</td>
+                        <td>100x</td>
+                        <td>1 in 540</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="jackpot.js"></script>
+</body>
+</html>
